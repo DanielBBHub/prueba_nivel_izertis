@@ -3,6 +3,7 @@ package com.dabebel.prueba.controlador;
 import com.dabebel.prueba.modelo.Model;
 import com.dabebel.prueba.servicio.MovieService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,13 +16,8 @@ public class Controller {
         this.movieService = movieService;
     }
 
-    @GetMapping("/peliculas")
-    public Model getMovies(@RequestParam String name) {
-        return movieService.searchMovies(name);
-    }
-    
-    @GetMapping("/login")
-    public Model login(@RequestParam String name) {
+    @PostMapping("/peliculas")
+    public Model getMovies(@RequestParam("pelicula") String name) {
         return movieService.searchMovies(name);
     }
 }

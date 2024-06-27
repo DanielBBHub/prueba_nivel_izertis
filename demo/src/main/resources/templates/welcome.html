@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Bienvenido</title>
+</head>
+<body>
+<form th:action="@{/peliculas}" method="post">
+    <h2>Bienvenido</h2>
+    <p>Busca la película que quieras</p>
+	<input type="text" id="pelicula" name="pelicula" />
+	<div>
+         <button type="submit">Submit</button>
+    </div>
+</form>
+</body>
+</html>
